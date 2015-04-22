@@ -7,7 +7,7 @@
 
 makeCacheMatrix <- function(x = matrix()) {
   m <- NULL
-  ## set is a function that changes the vector stored in the main function.
+  ## set is a function that changes the matrix stored in the main function.
   set <- function(y) {
     x <<- y ## double arrow replaces x in main fct, not just in set
     m <<- NULL ## resets the inverse
@@ -15,7 +15,7 @@ makeCacheMatrix <- function(x = matrix()) {
   get <- function() x ## returns x stored in function() - the input
   setinv <- function(inv) m <<- inv ## uses set function
   getinv <- function() m
-  ## store all these functions in makeVector
+  ## store all these functions in makeCacheMatrix
   list(set = set, get = get,
        setinv = setinv,
        getinv = getinv)
